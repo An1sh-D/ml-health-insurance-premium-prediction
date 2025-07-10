@@ -1,84 +1,126 @@
-Health Insurance Premium Prediction
-Welcome to ml-health-insurance-premium-prediction — a machine learning project designed to predict health insurance costs based on customer demographics, medical history, and income data. This project implements end-to-end data cleaning, feature engineering, model training (Linear, Ridge, XGBoost Regression), and a Streamlit app for live deployment.
+# Health Insurance Premium Prediction
 
-🔧 Project Structure
-bash
-Copy
-Edit
+Welcome to the **Health Insurance Premium Prediction System** — a complete machine learning solution designed to predict annual health insurance premiums based on personal and health-related attributes. This project integrates **data cleaning**, **feature engineering**, **model training**, and a **Streamlit application** for intuitive predictions.
+
+---
+
+## Project Structure
+
+```
 ml-health-insurance-premium-prediction/
-├── App/                        # Streamlit frontend application
-├── artifacts/                  # Saved ML models and scalers
-├── data_segmentation.py        # Script for splitting datasets
-├── insuranc_premium_overall.py # Overall training and preprocessing
-├── premium_young.py            # Young segment model training
-├── premium_young_with_gr.py    # Young segment with genetical risk model training
-├── primium_rest.py             # Rest segment model training
-├── primium_rest_with_gr.py     # Rest segment with genetical risk model training
-├── premiums.xlsx               # Full dataset (Excel)
-├── premiums_rest.xlsx          # Segmented dataset for rest population
-├── premiums_young.xlsx         # Segmented dataset for young population
-├── premiums_young_with_gr.xlsx # Young dataset with genetical risk
-└── README.md                   # Project overview and setup instructions
-✨ Features
-Comprehensive Data Cleaning: Missing values handling, outlier removal, invalid negative value corrections
+├── App/                     # Streamlit frontend application
+├── artifacts/               # Trained ML models and scalers
+├── data_segmentation.py     # Script for data segmentation
+├── insuranc_premium_overall.py  # Main pipeline for overall premium prediction
+├── premium_young.py         # Pipeline for young demographics
+├── premium_young_with_gr.py # Pipeline with genetical risk
+├── primium_rest.py          # Pipeline for remaining demographics
+├── primium_rest_with_gr.py  # Pipeline with genetical risk
+├── premiums.xlsx            # Full dataset
+├── premiums_rest.xlsx       # Segmented dataset
+├── premiums_young.xlsx      # Segmented dataset
+├── premiums_young_with_gr.xlsx # Segmented dataset with genetical risk
+├── requirements.txt         # Python dependencies
+└── README.md                # Project overview and setup instructions
+```
 
-Feature Engineering: Categorical encoding, medical risk score calculation, income segmentation
+---
 
-Regression Modeling: Linear Regression, Ridge Regression, and XGBoost Regression with hyperparameter tuning
+## Features
 
-Streamlit Frontend: Interactive application for real-time insurance premium predictions
+✅ **Comprehensive Data Cleaning**: Handles missing values, outliers, and inconsistent categories
+✅ **Feature Engineering**: Encoding categorical variables, scaling numeric columns, and calculating risk scores
+✅ **Multiple Models**: Linear Regression, Ridge Regression, and XGBoost for robust predictions
+✅ **Streamlit Frontend**: User-friendly web app for insurance premium prediction
+✅ **Modular Pipeline**: Organized codebase for scalability and maintenance
 
-Well-Structured Scripts: Segregated scripts for each dataset segment for clean reproducibility
+---
 
-🚀 Getting Started
-Clone the Repository
-bash
-Copy
-Edit
+## Getting Started
+
+Follow these steps to get up and running:
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/An1sh-D/ml-health-insurance-premium-prediction.git
 cd ml-health-insurance-premium-prediction
-Install Dependencies
-Ensure you have Python 3.10+ installed. Then install requirements:
+```
 
-bash
-Copy
-Edit
+---
+
+### 2. Install Dependencies
+
+Ensure you have **Python 3.9+** installed, then install required packages:
+
+```bash
 pip install -r requirements.txt
-Run Training Scripts
-Generate models and scalers for each segment by running:
+```
 
-bash
-Copy
-Edit
-python premium_young.py
-python primium_rest.py
-Run other scripts similarly if you want to generate models for datasets with genetical risk integrated.
+---
 
-Launch the Streamlit Application
-From the project root or inside App/:
+### 3. Run Data Processing Pipelines
 
-bash
-Copy
-Edit
-streamlit run main.py
-The app will open in your default web browser for live predictions.
+Run any of the processing scripts based on your needs. For example:
 
-🔍 Testing
-✅ Current testing is manual via Streamlit input validation and model evaluation scripts
-🔜 Future updates can integrate unit tests for data pipelines and model performance
+```bash
+python insuranc_premium_overall.py
+```
 
-🤝 Contributing
-Contributions are welcome to enhance this project further:
+---
 
-Fork this repository
+### 4. Launch the Streamlit Application
 
-Create a new branch: git checkout -b feature-name
+Navigate to the `App` directory (if your main Streamlit script is there) or project root and run:
 
-Commit your changes: git commit -m 'Add feature'
+```bash
+streamlit run App/main.py
+```
 
-Push to your branch: git push origin feature-name
+> The Streamlit app will open automatically in your default web browser.
 
-Open a pull request
+---
 
-📜 License
-This project is licensed under the MIT License. See LICENSE for details.
+## Testing
+
+Basic functional tests are embedded within scripts (e.g. shape checks, prints). For extending this project with **pytest unit tests**, create a `tests/` directory and include pipeline, preprocessing, and model tests.
+
+---
+
+## Contributing
+
+We welcome contributions to improve the **Health Insurance Premium Prediction System**. If you would like to contribute:
+
+1. Fork this repository.
+
+2. Create a feature branch:
+
+   ```bash
+   git checkout -b feature-name
+   ```
+
+3. Commit your changes:
+
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+
+4. Push to the branch:
+
+   ```bash
+   git push origin feature-name
+   ```
+
+5. Open a pull request.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**. For details, please refer to the `LICENSE` file.
+
+---
+
+> Thank you for using the Health Insurance Premium Prediction System! 🎯 Enhance your data-driven decisions with confidence.
+
+---
